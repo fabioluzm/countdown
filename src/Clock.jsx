@@ -26,10 +26,14 @@ class Clock extends Component {
         this.setState({days, hours, minutes, seconds})
     }
     
-    // depecrated function. Need "UNSAFE_" to keep running
-    UNSAFE_componentWillMount() {
-        this.getTimeUntil(this.props.deadline);
-    }
+    // depecrated function. Need "UNSAFE_" to keep running or "componentDidMount()"
+    // UNSAFE_componentWillMount() {
+    //     // this.getTimeUntil(this.props.deadline);
+    //     setInterval(
+    //         () => this.getTimeUntil(this.props.deadline)
+    //         ,1000
+    //     )
+    // }
 
     componentDidMount() {
         setInterval(
